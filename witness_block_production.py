@@ -20,7 +20,7 @@ rpc = SteemNodeRPC("ws://localhost:8090", "", "")
     Last Block that you have process in your backend.
     Processing will continue at `last_block + 1`
 """
-last_block = 864000
+last_block = 1160000
 
 """
    Witness account to monitor
@@ -56,11 +56,11 @@ if __name__ == '__main__':
             if block["witness"] == watch_account:
                 count = count + 1
                 print("Produced Blocks for",watch_account,":", count)
-                witness_info = rpc.get_witness(watch_account)
-                missed_count = witness_info["total_missed"]
-                print("Missed:",missed_count)
-                reliability = count/(count + missed_count)*100
-                print("Reliability:",reliability)
+                #witness_info = rpc.get_witness(watch_account)
+                #missed_count = witness_info["total_missed"]
+                #print("Missed:",missed_count)
+                #reliability = count/(count + missed_count)*100
+                #print("Reliability:",reliability)
 
 
             # Process block
