@@ -69,7 +69,7 @@ if __name__ == '__main__':
         for witness in watch_accounts:
             
             #Gets missed block count from blockchain(for each witness)
-            witness_info = rpc.get_witness(witness)
+            witness_info = rpc.get_witness_by_account(witness)
             missed_count = witness_info["total_missed"]            
             
             #outputs statistics if produced more than 50 blocks
